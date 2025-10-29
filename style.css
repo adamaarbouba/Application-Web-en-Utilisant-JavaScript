@@ -176,7 +176,7 @@ label {
   margin: 2em;
 }
 
-.scoorBtn,
+.scoreBtn,
 .nextBtn,
 .prevBtn {
   font-size: 1em;
@@ -189,7 +189,7 @@ label {
 }
 
 
-.scoorBtn,
+.scoreBtn,
 .prevBtn,
 .nextBtn:hover {
   box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
