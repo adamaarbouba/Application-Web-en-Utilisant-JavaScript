@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-image: url(Background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+header {
+  display: block;
+  box-shadow: 0 10px 10px 1px rgba(0, 0, 0, 0.1);
+}
+/* nav */
+nav {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  font-size: 1.25rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+}
+nav ul li a {
+  padding: 1em 0.5em;
+  color: aliceblue;
+  border-radius: 25px;
+}
+
+nav ul li a:hover {
+  background-color: hsl(0, 0%, 47%);
+}
+
+.logo {
+  color: hsl(0, 0%, 100%);
+  font-family: "BBH Sans Bartle", sans-serif;
+}
+
+/* Section login */
+
+.login-Card {
+  background-color: rgba(255, 255, 255, 0.473);
+  width: 400px;
+  height: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 5px 40px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+}
+
+.Card {
+  background-color: rgba(255, 255, 255, 0.473);
+  width: 400px;
+  height: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 5px 40px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+}
+
+.card-content {
+  padding: 12px 44px;
+}
+.card-title {
+  font-family: "Raleway Thin", sans-serif;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  padding-top: 13px;
+  text-align: center;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 21px;
+  cursor: pointer;
+  color: hsl(0, 0%, 47%);
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+.submit-btn:hover {
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.75);
+}
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+.form-border {
+  height: 1px;
+  width: 100%;
+}
+.form-content {
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  padding: 1em;
+}
+
+/* Quiz */
+
+.Quiz-box {
+  display: flex;
+  padding: 2em;
+  height: fit-content;
+  flex-direction: column;
+}
+
+.Choice {
+  padding: 1em;
+  height: 3em;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: hsla(0, 35%, 50%, 0.432);
+}
+
+.btn:hover {
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Next & Previos */
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2em;
+}
+
+.scoorBtn,
+.nextBtn,
+.prevBtn {
+  font-size: 1em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  width: 100px;
+  height: 50px;
+  padding: 1em;
+  border-radius: 25px;
+  background-color: hsla(0, 35%, 50%, 0.432);
+}
+
+
+.scoorBtn,
+.prevBtn,
+.nextBtn:hover {
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
+}
+

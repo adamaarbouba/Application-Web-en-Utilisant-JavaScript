@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" class="css" />
+
+    <title>Quiz</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="">Mountains Behold</a>
+        </div>
+
+        <ul>
+          <li><a href="">Solo</a></li>
+          <li><a href="">WithFriends</a></li>
+          <li><a href="">Account</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- <section state="on" id="Login" class="login-Card" style="height: 60vh">
+        <div class="card-content">
+          <div class="card-title">
+            <h2 class="Login">LOGIN</h2>
+          </div>
+          <form class="form">
+            <label for="user-email" style="padding-top: 13px">Email</label>
+            <input
+              id="user-email"
+              class="form-content"
+              type="email"
+              name="email"
+              required
+            />
+            <label for="user-password" style="padding-top: 22px"
+              >Password</label
+            >
+            <input
+              id="user-password"
+              class="form-content"
+              type="password"
+              name="password"
+              required
+            />
+          </form>
+        </div>
+        <div class="controls">
+          <button class="nextBtn">Next</button>
+        </div>
+      </section> -->
+      <!--  -->
+      <section state="off" id="Quiz1" class="Card">
+        <div class="card-content">
+          <div class="card-title"><h3>First Quiz</h3></div>
+          <div class="card-title">
+            What is the tallest mountain in the world?
+          </div>
+        </div>
+        <div class="Quiz-box">
+          <div class="Choice">
+            <button class="btn" data-correct="true">Mount Everest</button>
+          </div>
+          <div class="Choice">
+            <button class="btn">Mount Kilimanjaro</button>
+          </div>
+          <div class="Choice"><button class="btn">Mount Elbrus</button></div>
+          <div class="Choice"><button class="btn">Mount McKinley</button></div>
+        </div>
+        <div class="controls">
+          <button class="prevBtn">Previous</button>
+          <button class="nextBtn">Next</button>
+        </div>
+      </section>
+
+      <section state="off" id="Quiz2" class="Card">
+        <div class="card-content">
+          <div class="card-title"><h3>Second Quiz</h3></div>
+          <div class="card-title">Which is the highest mountain in Africa?</div>
+        </div>
+        <div class="Quiz-box">
+          <div class="Choice">
+            <button class="btn" data-correct="true">Mount Kilimanjaro</button>
+          </div>
+          <div class="Choice"><button class="btn">Mount Kenya</button></div>
+          <div class="Choice"><button class="btn">Mount Toubkal</button></div>
+          <div class="Choice"><button class="btn">Mount Cameroon</button></div>
+        </div>
+        <div class="controls">
+          <button class="prevBtn">Previous</button>
+          <button class="nextBtn">Next</button>
+        </div>
+      </section>
+
+      <section state="off" id="Quiz3" class="Card">
+        <div class="card-content">
+          <div class="card-title"><h3>Third Quiz</h3></div>
+          <div class="card-title">Which mountain is the highest in Europe?</div>
+        </div>
+        <div class="Quiz-box">
+          <div class="Choice">
+            <button class="btn" data-correct="true">Mount Elbrus</button>
+          </div>
+          <div class="Choice"><button class="btn">Mont Blanc</button></div>
+          <div class="Choice"><button class="btn">Matterhorn</button></div>
+          <div class="Choice"><button class="btn">Mount Etna</button></div>
+        </div>
+        <div class="controls">
+          <button class="prevBtn">Previous</button>
+          <button class="nextBtn">Next</button>
+        </div>
+      </section>
+
+      <section state="off" id="Quiz4" class="Card">
+        <div class="card-content">
+          <div class="card-title"><h3>Fourth Quiz</h3></div>
+          <div class="card-title">
+            Which is the tallest mountain in North America?
+          </div>
+        </div>
+        <div class="Quiz-box">
+          <div class="Choice">
+            <button class="btn" data-correct="true">
+              Denali (Mount McKinley)
+            </button>
+          </div>
+          <div class="Choice"><button class="btn">Mount Logan</button></div>
+          <div class="Choice"><button class="btn">Mount Rainier</button></div>
+          <div class="Choice">
+            <button class="btn">Mount Saint Elias</button>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="prevBtn">Previous</button>
+          <button class="nextBtn">Next</button>
+        </div>
+      </section>
+
+      <section state="off" id="Quiz5" class="Card">
+        <div class="card-content">
+          <div class="card-title"><h3>Fifth Quiz</h3></div>
+          <div class="card-title">
+            What is the highest mountain in South America?
+          </div>
+        </div>
+        <div class="Quiz-box">
+          <div class="Choice">
+            <button class="btn" data-correct="true">Aconcagua</button>
+          </div>
+          <div class="Choice"><button class="btn">Ojos del Salado</button></div>
+          <div class="Choice"><button class="btn">Huascarán</button></div>
+          <div class="Choice"><button class="btn">Illimani</button></div>
+        </div>
+        <div class="controls">
+          <button class="prevBtn">Previous</button>
+          <button class="scoorBtn">Your Scoor</button>
+        </div>
+      </section>
+
+      <!--  -->
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>
