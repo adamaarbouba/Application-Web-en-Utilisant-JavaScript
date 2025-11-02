@@ -7,7 +7,7 @@ const quizData = [
       "Mount Elbrus",
       "Mount McKinley",
     ],
-    correct: 0,
+    correct: "Mount Everest",
   },
   {
     question: "Which is the highest mountain in Africa?",
@@ -17,12 +17,12 @@ const quizData = [
       "Mount Toubkal",
       "Mount Cameroon",
     ],
-    correct: 0,
+    correct: "Mount Kilimanjaro",
   },
   {
     question: "Which mountain is the highest in Europe?",
     choices: ["Mount Etna", "Mont Blanc", "Matterhorn", "Mount Elbrus"],
-    correct: 3,
+    correct: "Mount Elbrus",
   },
   {
     question: "Which is the tallest mountain in North America?",
@@ -32,70 +32,143 @@ const quizData = [
       "Mount Rainier",
       "Denali (Mount McKinley)",
     ],
-    correct: 3,
+    correct: "Denali (Mount McKinley)",
   },
   {
     question: "What is the highest mountain in South America?",
     choices: ["Ojos del Salado", "Aconcagua", "Huascarán", "Illimani"],
-    correct: 1,
+    correct: "Aconcagua",
+  },
+  {
+    question: "What is the tallest mountain in Antarctica?",
+    choices: [
+      "Mount Vinson",
+      "Mount Erebus",
+      "Mount Sidley",
+      "Mount Kirkpatrick",
+    ],
+    correct: "Mount Vinson",
+  },
+  {
+    question: "Which mountain range is Mount Everest part of?",
+    choices: ["Andes", "Rocky Mountains", "Himalayas", "Alps"],
+    correct: "Himalayas",
+  },
+  {
+    question: "Which country is Mount Fuji located in?",
+    choices: ["China", "Japan", "South Korea", "Thailand"],
+    correct: "Japan",
+  },
+  {
+    question: "Which mountain is known as the 'Matterhorn of the Andes'?",
+    choices: ["Alpamayo", "Fitz Roy", "Illimani", "Huascarán"],
+    correct: "Fitz Roy",
+  },
+  {
+    question: "Which mountain is the highest volcano in the world?",
+    choices: ["Mauna Kea", "Mount Etna", "Ojos del Salado", "Mount Vesuvius"],
+    correct: "Ojos del Salado",
   },
 ];
 
-function displaySavedInfo() {
-  const CardContainer = document.getElementById("CardContainer");
-  CardContainer.innerHTML = "";
+let Score = 0;
+let currentQuiz = 0;
+let userAnswers = new Array(quizData.length);
 
-  for (let i = 0; i < quizData.length; i++) {
+const CardContainer = document.getElementById("CardContainer");
+const scoreDisplayCard = document.getElementById("ScoreCar");
+
+function displaySavedInfo() {
+  CardContainer.innerHTML = "";
+  scoreDisplayCard.innerHTML = "";
+
+  quizData.forEach((quiz, i) => {
     const progress = ((i + 1) / quizData.length) * 100;
+
     CardContainer.innerHTML += `
-<section state="off" class="Card">
+<section class="Card">
   <div class="card-content">
     <div class="card-title">
       <h3>Quiz ${i + 1}</h3>
       <div style="width: 100%; height: 2px;"></div>
       <div style="width: ${progress}%; height: 2px; background-color: black;"></div>
     </div>
-    <div class="card-title">${quizData[i].question}</div>
+    <div class="card-title">${quiz.question}</div>
   </div>
   <div class="Quiz-box">
-    ${quizData[i].choices.map((choice) => `
+    ${quiz.choices
+      .map(
+        (choice) => `
       <div class="Choice">
-        <button class="btn">${choice}</button>
+        <button class="btn" value="${choice}">${choice}</button>
       </div>`
-    ).join("")}
+      )
+      .join("")}
   </div>
   <div class="controls">
     <button class="prevBtn">Previous</button>
-    <button class="nextBtn">Next</button>
+    <button class="nextBtn">${
+      i === quizData.length - 1 ? "Finish" : "Next"
+    }</button>
   </div>
 </section>`;
-  }
+  });
 }
 
-
-
-displaySavedInfo();
-
-let currentQuiz = 0;
-const quizzes = document.querySelectorAll(".Card");
-
 function showQuiz(index) {
+  const quizzes = document.querySelectorAll(".Card");
   quizzes.forEach((quiz, i) => {
     quiz.hidden = i !== index;
   });
 }
 
+function calculateScore() {
+  Score = 0;
+  userAnswers.forEach((answer, i) => {
+    if (answer === quizData[i].correct) {
+      Score += 20;
+    }
+  });
+  scoreDisplayCard.innerHTML = `
+    <div class="card-content">
+      <div class="card-title">
+        <h3>Score: ${Score}</h3>
+      </div>
+    </div>`;
+}
+
+displaySavedInfo();
 showQuiz(currentQuiz);
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("nextBtn")) {
-    if (currentQuiz < quizzes.length - 1) {
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("btn")) {
+    userAnswers[currentQuiz] = event.target.value;
+    calculateScore();
+  }
+
+  if (event.target.classList.contains("nextBtn")) {
+    if (currentQuiz < quizData.length - 1) {
       currentQuiz++;
       showQuiz(currentQuiz);
+    } else {
+      calculateScore();
+
+      CardContainer.innerHTML = `
+      <section class="Card">
+        <div class="card-content">
+          <div class="card-title">
+            <h2>Quiz Completed!</h2>
+          </div>
+          <p class="card-title" >Your final score is: <strong>${Score}</strong> / ${
+        quizData.length * 20
+      }</p>
+        </div>
+      </section>
+    `;
     }
   }
 
-  if (e.target.classList.contains("prevBtn")) {
+  if (event.target.classList.contains("prevBtn")) {
     if (currentQuiz > 0) {
       currentQuiz--;
       showQuiz(currentQuiz);
