@@ -80,8 +80,6 @@ const scoreDisplayCard = document.getElementById("ScoreCar");
 
 function displaySavedInfo() {
   CardContainer.innerHTML = "";
-  scoreDisplayCard.innerHTML = "";
-
   quizData.forEach((quiz, i) => {
     const progress = ((i + 1) / quizData.length) * 100;
 
@@ -113,6 +111,8 @@ function displaySavedInfo() {
   </div>
 </section>`;
   });
+
+
 }
 
 function showQuiz(index) {
@@ -129,12 +129,6 @@ function calculateScore() {
       Score += 20;
     }
   });
-  scoreDisplayCard.innerHTML = `
-    <div class="card-content">
-      <div class="card-title">
-        <h3>Score: ${Score}</h3>
-      </div>
-    </div>`;
 }
 
 displaySavedInfo();
@@ -175,3 +169,5 @@ document.addEventListener("click", (event) => {
     }
   }
 });
+
+

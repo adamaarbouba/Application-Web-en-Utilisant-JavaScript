@@ -185,25 +185,12 @@ label {
   margin-bottom: 1em;
 }
 
-.scoreBtn,
-.prevBtn,
+.scoreBtn:hover,
+.prevBtn:hover,
 .nextBtn:hover {
   box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
-.selected {
-  background-color: #f0ad4e;
-}
-
-.correct {
-  background-color: #5cb85c;
-  color: white;
-}
-
-.wrong {
-  background-color: #d9534f;
-  color: white;
-}
 
 /*  login */
 
@@ -220,8 +207,8 @@ label {
 }
 
 .login-card input:focus {
-  border-color: #5cb85c;
-  box-shadow: 0 0 5px #5cb85c;
+  border-color: #ffffff;
+  box-shadow: 0 0 5px #000000;
 }
 
 #LoginContainer {
